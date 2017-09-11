@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body{
+            background: black;
+        }
+        .stage{
+            transform-style:preserve-3d;
+            position: absolute;
+            top:200px;
+            left:200px;
+            transform: rotateX(45deg) rotateY(45deg);
+            width:300px;
+            height:300px;
+            transform-origin: center;
+            transition: all 20s;
+            animation: moveRight 10s 10 forwards;
+            animation-timing-function: cubic-bezier(0.1,-1.68,.4,-1.93);
+        }
+        .stage div{
+            width:300px;
+            height:300px;
+            position:absolute;
+            background-image: url("../resource/img/2.jpg");
+        }
+        .stage:hover{
+            transform: rotateX(3600deg) rotateY(3600deg);
+        }
+        .top{
+            background: red;
+            transform: rotateX(90deg) translateZ(150px);
+        }
+        .bottom{
+            background: green;
+            transform: rotateX(-90deg) translateZ(150px);
+        }
+        .left{
+            background: deeppink;
+            transform: rotateY(-90deg) translateZ(150px);
+        }
+        .right{
+            background: black;
+            transform: rotateY(90deg) translateZ(150px)
+        }
+        .front{
+            background: gold;
+            transform: translateZ(150px);
+        }
+        .back{
+            background: orange;
+            transform: translateZ(150px);
+        }
+        @keyframes moveRight {
+            0%{
+                left: 500px;
+                top: 200px;
+            }
+            50%{
+                left: 700px;
+                top: 200px;
+                transform: rotateX(180deg) rotateY(180deg);
+            }
+            100%{
+                left: 500px;
+                top: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stage">
+        <div class="top">
+
+        
+        </div>
+        <div class="bottom"></div>
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="front"></div>
+        <div class="back"></div>
+    </div>
+
+</body>
+</html>
